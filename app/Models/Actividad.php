@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Actividad extends Model
 {
+	protected $fillable = [
+        'name'
+    ];
+
     public function cursos(){
     	return $this->belongsToMany('App\Models\Curso')->withTimesTamps();
     }

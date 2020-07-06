@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Permission;
 use App\Models\Role;
+use App\Models\Actividad;
+use App\Models\curso;
+use App\Models\Recurso;
 use App\User;
 
 /*
@@ -42,3 +45,19 @@ Route::middleware(['auth'])->group(function () {
 	Route::resource('debate','DebateController');
 	Route::resource('tarea','TareaController');
 	Route::resource('examen','ExamenController');
+
+Route::get('/test', function () {
+	/*
+	return   Recurso::create([
+        'name' => 'ing'
+
+
+    ]);
+
+    $actividad = Actividad::find(3);
+
+    $actividad->cursos()->sync([1,2,3]);
+
+    return $actividad->cursos;
+	*/	
+});

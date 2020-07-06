@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recurso extends Model
 {
+	protected $fillable = [
+        'name'
+    ];
+    
     public function tareas(){
     	return $this->belongsToMany('App\Models\Tarea')->withTimesTamps();
     }
