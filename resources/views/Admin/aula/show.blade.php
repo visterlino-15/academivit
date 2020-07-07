@@ -24,7 +24,7 @@
                   <div class="card-body">
                     <div class="row no-gutters align-items-center">
                       <div class="col mr-2">
-                        <div class="text-sm font-weight-bold text-primary text-uppercase mb-1">{{$curso->name}}</div>
+                        <div class="text-sm font-weight-bold text-primary text-uppercase mb-1">{{$curso->name_curso}}</div>
                         <div class="h6 mb-0 text-gray-500">
                           <small class="font-weight-bold mr-5"><span class="fa fa-user-graduate"></span> 0</small>
                           <small class="font-weight-bold"><span class="fa fa-user-tie"></span> 0</small>

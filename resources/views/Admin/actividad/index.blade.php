@@ -1,10 +1,16 @@
 @extends('inc.app')
-@section('title' ,'| curso')
+@section('title' ,'| Listado de aulas')
 @section('contenido')
-
 <div class="container-fluid mt-4">
-  <div class="row">
-
+          <div class="row">  
+              @if(session()->get('success'))
+                <div class="alert alert-success">
+                  {{ session()->get('success') }}  
+                </div>
+              @endif
+              @include('custom.message')
+          </div>
+          <div class="row">
     <div class="col-md-12 mb-3">
     <div class="card h-100 banner-curso position-relative">
       <div class="position-absolute">
@@ -23,9 +29,9 @@
       </div>
       <!-- banner del curso -->
       <div class=" title-curso position-absolute text-white mt-md-5 ml-md-5 mt-sm-3 ml-sm-3" > 
-        <div class="font-weight-bold nombre-curso text-uppercase">{{ $curso->name_curso }}</div>
-        Código: 
-        <div class="small codigo-curso d-inline" id="copiar-text">{{ $curso->token_key}} </div>
+        <div class="font-weight-bold nombre-curso text-uppercase">matematica</div>
+        Código: 345-gtr
+        <div class="small codigo-curso d-inline" id="copiar-text"></div>
         <i class="far fa-copy ml-3" id="copiar"></i>
       </div>
       <img src="{{ asset('img/banner.png') }}" class="card-img-top">
@@ -54,16 +60,30 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
                       <div class="dropdown-header">Opciones:</div>
-                      <a class="dropdown-item" href="#">Crear actividad</a>
+                      <a class="dropdown-item" href="{{ route('actividad.create') }}">Crear actividad</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Adjuntar recurso</a>
                     </div>
                   </div>
                 </div>
+                <div class="card-body">
+                <h5 class="card-title">Actividades</h5>
+                @foreach($actividads as $actividad)
+              <ul class="list-group">
+                <li class="list-group">{{ $actividad->name }} <a class="btn btn-secondary" href="{{ route('actividad.show',$actividad->id)}}">Ver</a></li>
+              </ul>
+              @endforeach
               </div>
+              </div>
+
+              
+              
     </div>
     
   </div>
-</div>
 
+
+        </div>  
 @endsection
+
+

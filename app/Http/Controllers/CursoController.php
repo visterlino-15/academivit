@@ -18,7 +18,7 @@ class CursoController extends Controller
     {
         
         $curso               = new Curso;
-        $curso->name         =    ucwords($request->nombreCurso);
+        $curso->name_curso         =    ucwords($request->nombreCurso);
         $curso->token_key    =    Str::random(8);
         $curso->save();
 

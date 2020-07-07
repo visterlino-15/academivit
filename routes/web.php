@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
 	Route::resource('/user', 'UserController', ['except'=>['create','store']]);
 
 	Route::resource('curso','cursoController');
-	Route::resource('activida','ActividaController');
+	Route::resource('actividad','ActividadController');
 });
 	
 	Route::resource('leccion','LeccionController');

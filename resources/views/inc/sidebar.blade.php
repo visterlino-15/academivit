@@ -18,6 +18,14 @@
       </li>
       @endcan
 
+      @can('haveaccess','actividad.index')
+      <li class="nav-item {{ request()->is('actividad*') ? 'active' : ''}}" >
+        <a class="nav-link" href="{{route('actividad.index')}}">
+          <i class="fas fa-fw fa-university"></i>
+          <span>Actividad</span></a>
+      </li>
+      @endcan
+
       <hr class="sidebar-divider">
       @if(request()->path() == 'curso')
       <div class="sidebar-heading sidebar-aula">
